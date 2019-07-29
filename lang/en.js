@@ -4,4 +4,5 @@ CKEDITOR.plugins.setLang( 'bt_table', 'en', {
   "addBorders": "Add borders",
   "addStripes": "Add stripes",
   "addHover": "Add hover effect",
+  "darkMode": "Dark style",
 });

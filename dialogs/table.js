@@ -224,6 +224,7 @@
           table.addClass('table-hover');
         else
           table.removeClass('table-hover');
+        
         if (info.tableBordered)
           table.addClass('table-bordered');
         else
@@ -233,6 +234,11 @@
           table.addClass('table-condensed');
         else
           table.removeClass('table-condensed');
+
+        if (info.tableDark)
+          table.addClass('table-dark');
+        else
+          table.removeClass('table-dark');
 
         if (!table.getParent().hasClass('table-responsive')) {
           var tablewrapper = makeElement('div');
@@ -360,6 +366,17 @@
                   setup: function(selectedTable) {
                   this.enable();
                     var val = selectedTable.hasClass('table-condensed');
+                    this.setValue(val);
+                  },
+                  commit: commitValue
+                }, {
+                  type: 'checkbox',
+                  id: 'tableDark',
+                  label: btLang.darkMode,
+                  'default': '',
+                  setup: function(selectedTable) {
+                  this.enable();
+                    var val = selectedTable.hasClass('table-dark');
                     this.setValue(val);
                   },
                   commit: commitValue
