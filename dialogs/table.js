@@ -135,18 +135,18 @@
           if (!table.$.tHead && (headers == 'row' || headers == 'both')) {
             var thead = new CKEDITOR.dom.element(table.$.createTHead());
             tbody = table.getElementsByTag('tbody').getItem(0);
-            var theRow = tbody.getElementsByTag('tr').getItem(0);
+            var thRow = tbody.getElementsByTag('tr').getItem(0);
 
             // Change TD to TH:
-            for (i = 0; i < theRow.getChildCount(); i++) {
-              var th = theRow.getChild(i);
+            for (i = 0; i < thRow.getChildCount(); i++) {
+              var th = thRow.getChild(i);
               // Skip bookmark nodes. (#6155)
               if (th.type == CKEDITOR.NODE_ELEMENT && !th.data('cke-bookmark')) {
                 th.renameNode('th');
                 th.setAttribute('scope', 'col');
               }
             }
-            thead.append(theRow.remove());
+            thead.append(thRow.remove());
           }
 
           if (table.$.tHead !== null && !(headers == 'row' || headers == 'both')) {
@@ -156,15 +156,15 @@
 
             var previousFirstRow = tbody.getFirst();
             while (thead.getChildCount() > 0) {
-              theRow = thead.getFirst();
-              for (i = 0; i < theRow.getChildCount(); i++) {
-                var newCell = theRow.getChild(i);
+              thRow = thead.getFirst();
+              for (i = 0; i < thRow.getChildCount(); i++) {
+                var newCell = thRow.getChild(i);
                 if (newCell.type == CKEDITOR.NODE_ELEMENT) {
                   newCell.renameNode('td');
                   newCell.removeAttribute('scope');
                 }
               }
-              theRow.insertBefore(previousFirstRow);
+              thRow.insertBefore(previousFirstRow);
             }
             thead.remove();
           }
