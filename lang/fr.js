@@ -4,4 +4,6 @@ CKEDITOR.plugins.setLang( 'bt4_table', 'fr', {
   "addBorders": "Ajouter des bordures",
   "addStripes": "Ajouter des rayures",
   "addHover": "Ajouter un effet de survol",
+  "darkMode": "Style sombre",
+  "invertHeader": "Style d'en-tête inverse"
 });

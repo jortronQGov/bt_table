@@ -4,4 +4,6 @@ CKEDITOR.plugins.setLang( 'bt4_table', 'et', {
   "addBorders": "Lisa piirjooned",
   "addStripes": "Lisa ridadele triibud",
   "addHover": "Muuda üle liikudes värvi",
+  "darkMode": "Tume stiil",
+  "invertHeader": "Päise vastupidine stiil"
 });
