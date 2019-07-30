@@ -5,4 +5,5 @@ CKEDITOR.plugins.setLang( 'bt_table', 'en', {
   "addStripes": "Add stripes",
   "addHover": "Add hover effect",
   "darkMode": "Dark style",
+  "invertHeader": "Invert header style",
 });

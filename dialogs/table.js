@@ -396,7 +396,7 @@
                 }, {
                   type: 'checkbox',
                   id: 'invertHeader',
-                  label: 'Invert header style',
+                  label: btLang.invertHeader,
                   'default': '',
                   setup: function(selectedTable) {
                     var val = false;
