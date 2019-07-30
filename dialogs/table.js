@@ -148,6 +148,19 @@
             }
             thead.append(thRow.remove());
           }
+          
+          // Should the header style be inverted?
+          if (table.$.tHead !== null) {
+            thead = new CKEDITOR.dom.element(table.$.tHead);
+  
+            if (info.invertHeader)
+              if (info.tableDark)
+                thead.addClass('thead-light').removeClass('thead-dark');
+              else
+                thead.addClass('thead-dark').removeClass('thead-light');
+            else
+              thead.removeClass('thead-light').removeClass('thead-dark');
+          }
 
           if (table.$.tHead !== null && !(headers == 'row' || headers == 'both')) {
             // Move the row out of the THead and put it in the TBody:
@@ -377,6 +390,21 @@
                   setup: function(selectedTable) {
                   this.enable();
                     var val = selectedTable.hasClass('table-dark');
+                    this.setValue(val);
+                  },
+                  commit: commitValue
+                }, {
+                  type: 'checkbox',
+                  id: 'invertHeader',
+                  label: 'Invert header style',
+                  'default': '',
+                  setup: function(selectedTable) {
+                    var val = false;
+                    var thead = selectedTable.getElementsByTag('thead').getItem(0);
+
+                    if (thead !== null) {
+                      val = thead.hasClass('thead-light') || thead.hasClass('thead-dark');
+                    }
                     this.setValue(val);
                   },
                   commit: commitValue
