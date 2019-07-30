@@ -1,5 +1,5 @@
 "use strict"
-CKEDITOR.plugins.setLang( 'bt_table', 'en', {
+CKEDITOR.plugins.setLang( 'bt4_table', 'en', {
   "compactStyle": "Compact style",
   "addBorders": "Add borders",
   "addStripes": "Add stripes",

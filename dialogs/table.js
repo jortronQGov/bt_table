@@ -46,7 +46,7 @@
 
   function tableDialog(editor, command) {
     var lang = editor.lang.table;
-    var btLang = editor.lang.bt_table;
+    var btLang = editor.lang.bt4_table;
 
     var makeElement = function(name) {
       return new CKEDITOR.dom.element(name, editor.document);
@@ -467,11 +467,11 @@
     };
   }
 
-  CKEDITOR.dialog.add('bt_table', function(editor) {
+  CKEDITOR.dialog.add('bt4_table', function(editor) {
     // Helper function call.
     return tableDialog(editor, 'table');
   });
-   CKEDITOR.dialog.add('bt_tableProperties', function(editor) {
+   CKEDITOR.dialog.add('bt4_tableProperties', function(editor) {
     // Helper function call.
     return tableDialog(editor, 'tableProperties');
    });
