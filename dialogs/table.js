@@ -231,9 +231,9 @@
           table.removeClass('table-bordered');
 
         if (info.tableCondensed)
-          table.addClass('table-condensed');
+          table.addClass('table-sm');
         else
-          table.removeClass('table-condensed');
+          table.removeClass('table-sm');
 
         if (info.tableDark)
           table.addClass('table-dark');
@@ -365,7 +365,7 @@
                   'default': '',
                   setup: function(selectedTable) {
                   this.enable();
-                    var val = selectedTable.hasClass('table-condensed');
+                    var val = selectedTable.hasClass('table-sm');
                     this.setValue(val);
                   },
                   commit: commitValue
