@@ -5,5 +5,12 @@ CKEDITOR.plugins.setLang( 'bt4_table', 'en', {
   "addStripes": "Add stripes",
   "addHover": "Add hover effect",
   "darkMode": "Dark style",
-  "invertHeader": "Invert header style"
+  "invertHeader": "Invert header style",
+  "responsiveLabel": "Responsive breakpoint",
+  "responsiveAll": "All",
+  "responsiveSm": "Small",
+  "responsiveMd": "Medium",
+  "responsiveLg": "Large",
+  "responsiveXl": "Extra large",
+  "responsiveNone": "Not responsive"
 });

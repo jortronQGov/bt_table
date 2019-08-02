@@ -5,5 +5,12 @@ CKEDITOR.plugins.setLang( 'bt4_table', 'ru', {
   "addStripes": "Зебра",
   "addHover": "Подсветка строк при наведении",
   "darkMode": "темный стиль",
-  "invertHeader": "Обратный стиль заголовка"
+  "invertHeader": "Обратный стиль заголовка",
+  "responsiveLabel": "Отзывчивая точка останова",
+  "responsiveAll": "Все",
+  "responsiveSm": "Небольшой",
+  "responsiveMd": "Средняя",
+  "responsiveLg": "Большие",
+  "responsiveXl": "Очень больших",
+  "responsiveNone": "Не отзывчивый"
 });

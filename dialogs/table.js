@@ -253,11 +253,40 @@
         else
           table.removeClass('table-dark');
 
-        if (!table.getParent().hasClass('table-responsive')) {
+        var responsiveClass = 'table-responsive';
+        switch (info.selResponsive) {
+          case 'all':
+            break;
+          case 'sm':
+            responsiveClass += '-sm';
+            break;
+          case 'md':
+            responsiveClass += '-md';
+            break;
+          case 'lg':
+            responsiveClass += '-lg';
+            break;
+          case 'xl':
+            responsiveClass += '-xl';
+            break;
+          default:
+            responsiveClass = null;
+        }
+
+        var tableParent = table.getParent();
+        var initResponsiveClass = new RegExp(/table-responsive.*$/).exec(tableParent.getAttribute('class'));
+        if (!tableParent.hasClass('table-wrapper')) {
           var tablewrapper = makeElement('div');
-          tablewrapper.addClass('table-responsive');
+          tablewrapper.addClass('table-wrapper');
+          if (responsiveClass) {
+            tablewrapper.addClass(responsiveClass);
+          }
           tablewrapper.append(table);
           editor.insertElement(tablewrapper);
+        } else if (!responsiveClass) {
+          tableParent.removeClass(initResponsiveClass);
+        } else if (initResponsiveClass !== responsiveClass) {
+          tableParent.removeClass(initResponsiveClass).addClass(responsiveClass);
         }
       },
       contents: [{
@@ -460,7 +489,21 @@
                     captionElement.getItem(i).remove();
                 }
               }
-            }]
+            }, {
+                type: 'select',
+                id: 'selResponsive',
+                'default': 'all',
+                label: btLang.responsiveLabel,
+                items: [
+                  [btLang.responsiveAll, 'all'],
+                  [btLang.responsiveSm, 'sm'],
+                  [btLang.responsiveMd, 'md'],
+                  [btLang.responsiveLg, 'lg'],
+                  [btLang.responsiveXl, 'xl'],
+                  [btLang.responsiveNone, '']
+                ],
+                commit: commitValue
+              }]
           }]
         },
       ]
