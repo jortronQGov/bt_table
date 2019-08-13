@@ -6,7 +6,6 @@
 (function() {
 
   var commitValue = function(data) {
-    //console.lo
     var id = this.id;
     if (!data.info)
       data.info = {};
@@ -98,7 +97,6 @@
         }
       },
       onOk: function() {
-      //  console.log('onOk: react on table insertion/change');
         var selection = editor.getSelection(),
           bms = this._.selectedElement && selection.createBookmarks();
 
@@ -224,7 +222,7 @@
             selection.selectBookmarks(bms);
           } catch (er) {}
         }
-        // There should be table. So lets add our classes.
+        // There should be a table. So let's add our classes.
         table.addClass('table');
         table.addClass('cke_show_border');
         table.setStyle('width', '100%');
@@ -330,7 +328,7 @@
                 type: 'select',
                 id: 'selHeaders',
                 requiredContent: 'th',
-                'default': '',
+                'default': 'row',
                 label: lang.headers,
                 items: [
                   [lang.headersNone, ''],
@@ -373,7 +371,7 @@
                   type: 'checkbox',
                   id: 'tableStriped',
                   label: bs4Lang.addStripes,
-                  'default': true,
+                  'default': '',
                   setup: function(selectedTable) {
                     var val = selectedTable.hasClass('table-striped');
                     this.setValue(val);
@@ -383,7 +381,7 @@
                   type: 'checkbox',
                   id: 'tableHover',
                   label: bs4Lang.addHover,
-                  'default': true,
+                  'default': '',
                   setup: function(selectedTable) {
                     var val = selectedTable.hasClass('table-hover');
                     this.setValue(val);
