@@ -1,18 +1,15 @@
-# Bootstrap 3 table plugin for CKEditor 4
+# Bootstrap 4 table plugin for CKEditor 4
 
-This plugin is built on top original table plugin. This is really 80% same code with lots of modifications some simplifications.
+This plugin updates [Bootstrap 3 table](https://github.com/kaido24/bt_table) with Bootstrap 4 compatibility. New functionality includes dark table colour, inverted header (row) colour and responsive breakpoints.
 
-It will just replace some original table plugin functionality and adds Bootstrap 3 options.
+## About Bootstrap 3 table
+
+Bootstrap 3 table is built on top of the original CKEditor table plugin. It replaces some of the original table plugin's functionality and adds Bootstrap 3 options.
 
 ##Installation
 
-Add this plugin to CKEditor folder/plugins
+Add this plugin to CKEditor folder/plugins and update CKEditor config:
 
-config.extraPlugins = 'language';
+```config.extraPlugins = 'language';```
 
-You may read more about manual installation at http://docs.ckeditor.com/#!/guide/dev_plugins 
-
-## Other Bootstrap 3 software for CKEditor 4
-Bootstrap 3 Quicktable https://github.com/kaido24/btquicktable
-
-Bootstrap 3 grid https://github.com/kaido24/btgrid
+[Read more about manual installation](http://docs.ckeditor.com/#!/guide/dev_plugins). 
