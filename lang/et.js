@@ -1,5 +1,5 @@
 "use strict"
-CKEDITOR.plugins.setLang( 'bt4_table', 'et', {
+CKEDITOR.plugins.setLang( 'bootstrap4_table', 'et', {
   "compactStyle": "Kompaktne stiil",
   "addBorders": "Lisa piirjooned",
   "addStripes": "Lisa ridadele triibud",

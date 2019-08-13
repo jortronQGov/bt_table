@@ -3,7 +3,7 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.plugins.add( 'bt4_table', {
+CKEDITOR.plugins.add( 'bootstrap4_table', {
   requires: 'dialog,table',
   icons: 'table', // %REMOVE_LINE_CORE%
   lang: 'en,et,ru,fr,de',
@@ -14,7 +14,7 @@ CKEDITOR.plugins.add( 'bt4_table', {
 
       var lang = editor.lang.table;
 
-      editor.addCommand( 'bt4_table', new CKEDITOR.dialogCommand( 'bt4_table', {
+      editor.addCommand( 'bootstrap4_table', new CKEDITOR.dialogCommand( 'bootstrap4_table', {
         context: 'table',
         allowedContent: 'table{width,height}[align,border,cellpadding,cellspacing,summary];' +
           'caption tbody thead tfoot;' +
@@ -35,23 +35,23 @@ CKEDITOR.plugins.add( 'bt4_table', {
         } );
       }
 
-      editor.addCommand( 'bt4_tableProperties', new CKEDITOR.dialogCommand( 'bt4_tableProperties', createDef() ) );
+      editor.addCommand( 'bootstrap4_tableProperties', new CKEDITOR.dialogCommand( 'bootstrap4_tableProperties', createDef() ) );
 
       editor.ui.addButton && editor.ui.addButton( 'Table', {
         label: lang.toolbar,
-        command: 'bt4_table',
+        command: 'bootstrap4_table',
         toolbar: 'insert,30'
       } );
 
-      CKEDITOR.dialog.add( 'bt4_table', this.path + 'dialogs/table.js' );
-      CKEDITOR.dialog.add( 'bt4_tableProperties', this.path + 'dialogs/table.js' );
+      CKEDITOR.dialog.add( 'bootstrap4_table', this.path + 'dialogs/table.js' );
+      CKEDITOR.dialog.add( 'bootstrap4_tableProperties', this.path + 'dialogs/table.js' );
 
       // If the "menu" plugin is loaded, register the menu items.
       if ( editor.addMenuItems ) {
         editor.addMenuItems( {
           table: {
             label: lang.menu,
-            command: 'bt4_tableProperties',
+            command: 'bootstrap4_tableProperties',
             group: 'table',
             order: 5
           },
@@ -62,7 +62,7 @@ CKEDITOR.plugins.add( 'bt4_table', {
         var element = evt.data.element;
 
         if ( element.is( 'table' ) )
-          evt.data.dialog = 'bt4_tableProperties';
+          evt.data.dialog = 'bootstrap4_tableProperties';
       } );
 
       // If the "contextmenu" plugin is loaded, register the listeners.
@@ -70,7 +70,7 @@ CKEDITOR.plugins.add( 'bt4_table', {
         editor.contextMenu.addListener( function() {
           // menu item state is resolved on commands.
           return {
-            bt4_table: CKEDITOR.TRISTATE_OFF
+            bootstrap4_table: CKEDITOR.TRISTATE_OFF
           };
         });
       }

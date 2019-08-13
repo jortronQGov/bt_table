@@ -46,7 +46,7 @@
 
   function tableDialog(editor, command) {
     var lang = editor.lang.table;
-    var btLang = editor.lang.bt4_table;
+    var bs4Lang = editor.lang.bootstrap4_table;
 
     var makeElement = function(name) {
       return new CKEDITOR.dom.element(name, editor.document);
@@ -372,8 +372,8 @@
                 {
                   type: 'checkbox',
                   id: 'tableStriped',
-                  label: btLang.addStripes,
-                  'default': '',
+                  label: bs4Lang.addStripes,
+                  'default': true,
                   setup: function(selectedTable) {
                     var val = selectedTable.hasClass('table-striped');
                     this.setValue(val);
@@ -382,8 +382,8 @@
                 }, {
                   type: 'checkbox',
                   id: 'tableHover',
-                  label: btLang.addHover,
-                  'default': '',
+                  label: bs4Lang.addHover,
+                  'default': true,
                   setup: function(selectedTable) {
                     var val = selectedTable.hasClass('table-hover');
                     this.setValue(val);
@@ -392,7 +392,7 @@
                 }, {
                   type: 'checkbox',
                   id: 'tableBordered',
-                  label: btLang.addBorders,
+                  label: bs4Lang.addBorders,
                   'default': '',
                   setup: function(selectedTable) {
                     var val = selectedTable.hasClass('table-bordered');
@@ -403,7 +403,7 @@
                 }, {
                   type: 'checkbox',
                   id: 'tableCondensed',
-                  label: btLang.compactStyle,
+                  label: bs4Lang.compactStyle,
                   'default': '',
                   setup: function(selectedTable) {
                   this.enable();
@@ -414,7 +414,7 @@
                 }, {
                   type: 'checkbox',
                   id: 'tableDark',
-                  label: btLang.darkMode,
+                  label: bs4Lang.darkMode,
                   'default': '',
                   setup: function(selectedTable) {
                   this.enable();
@@ -425,7 +425,7 @@
                 }, {
                   type: 'checkbox',
                   id: 'invertHeader',
-                  label: btLang.invertHeader,
+                  label: bs4Lang.invertHeader,
                   'default': '',
                   setup: function(selectedTable) {
                     var val = false;
@@ -493,14 +493,14 @@
                 type: 'select',
                 id: 'selResponsive',
                 'default': 'all',
-                label: btLang.responsiveLabel,
+                label: bs4Lang.responsiveLabel,
                 items: [
-                  [btLang.responsiveAll, 'all'],
-                  [btLang.responsiveSm, 'sm'],
-                  [btLang.responsiveMd, 'md'],
-                  [btLang.responsiveLg, 'lg'],
-                  [btLang.responsiveXl, 'xl'],
-                  [btLang.responsiveNone, '']
+                  [bs4Lang.responsiveAll, 'all'],
+                  [bs4Lang.responsiveSm, 'sm'],
+                  [bs4Lang.responsiveMd, 'md'],
+                  [bs4Lang.responsiveLg, 'lg'],
+                  [bs4Lang.responsiveXl, 'xl'],
+                  [bs4Lang.responsiveNone, '']
                 ],
                 commit: commitValue
               }]
@@ -510,11 +510,11 @@
     };
   }
 
-  CKEDITOR.dialog.add('bt4_table', function(editor) {
+  CKEDITOR.dialog.add('bootstrap4_table', function(editor) {
     // Helper function call.
     return tableDialog(editor, 'table');
   });
-   CKEDITOR.dialog.add('bt4_tableProperties', function(editor) {
+   CKEDITOR.dialog.add('bootstrap4_tableProperties', function(editor) {
     // Helper function call.
     return tableDialog(editor, 'tableProperties');
    });
